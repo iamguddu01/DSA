@@ -1,5 +1,5 @@
 let prompt = require('prompt-sync')();
-let a = Number(prompt("Enter a number : "))
+let a = Number(prompt("Enter a number : "));
 // console.log(a);   // or process.stdout.write(a). it will not run in chrome
 for(let i = 1; i <= a; i++){
     for(let j = 1; j<=a; j++){
