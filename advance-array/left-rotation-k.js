@@ -21,12 +21,35 @@
 // Another approach 
 // temp = arr[(i+k) % arr.length]   this is a efficient approach 
 
+// let arr = [1,2,3,4,5];
+// let temp = new Array(arr.length);
+// let prompt = require("prompt-sync")();
+// let k = Number(prompt("Enter K value : "));
+// k = k % arr.length;     // Error handling like previous where we used if else
+// for (let i = 0; i<arr.length; i++){
+//     temp[i] = arr[(k+i) % arr.length];
+// }
+// console.log(temp);
+
+
+// super efficient (Or) Block swap reverse algorithm
 let arr = [1,2,3,4,5];
-let temp = new Array(arr.length);
 let prompt = require("prompt-sync")();
 let k = Number(prompt("Enter K value : "));
-k = k % arr.length;     // Error handling like previous where we used if else
-for (let i = 0; i<arr.length; i++){
-    temp[i] = arr[(k+i) % arr.length];
+k = k % arr.length;
+
+reverse(0, k-1);              // Reversing the starting numbers that will be shift 
+reverse(k, arr.length-1);    // now reversing for index = k means form 3
+reverse(0, arr.length-1);     // and now reversing the complete array 
+
+
+function reverse (i, j){
+    while(i<j){
+        let temp = arr[i];
+        arr[i] = arr[j]; 
+        arr[j] = temp
+        i++;
+        j--;
+    }
 }
-console.log(temp);
+console.log(arr);
