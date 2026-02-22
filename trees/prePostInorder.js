@@ -1,3 +1,8 @@
+// Pre Order => root > left > right
+// In order => left > root > right
+// Post order => left > right > root
+
+
 function TreeNode(val, left = null, right = null){
     this.val = val;
     this.right = right;
